@@ -40,3 +40,31 @@ const getUserChoice = function (weapon) {
   highScore.innerText = userScore;
   localStorage.setItem('highScore', userScore);
 };
+
+const getResult = function (userChoice, compChoice) {
+  if (userChoice === 'rock') {
+    if (compChoice === 'rock') {
+      return 'draw';
+    } else if (compChoice === 'scissors') {
+      return 'won';
+    } else if (compChoice === 'paper') {
+      return 'lost';
+    }
+  } else if (userChoice === 'scissors') {
+    if (compChoice === 'scissors') {
+      return 'draw';
+    } else if (compChoice === 'rock') {
+      return 'lost';
+    } else if (compChoice === 'paper') {
+      return 'won';
+    }
+  } else if (userChoice === 'paper') {
+    if (compChoice === 'paper') {
+      return 'draw';
+    } else if (compChoice === 'scissors') {
+      return 'lost';
+    } else if (compChoice === 'rock') {
+      return 'won';
+    }
+  }
+};
